@@ -7873,6 +7873,8 @@ img.mirror-vertical {
 .py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
+  margin-right: 8rem !important;
+  margin-left: 8rem !important;
 }
 
 .pt-0 {
