@@ -52,7 +52,7 @@
   --bs-grey-rgb: 108, 117, 125;
   --bs-dark-rgb: 33, 37, 41;
   --bs-qtred-rgb: 195, 34, 32;
-  --bs-qtgreen-rgb: 161, 187, 47;
+  --bs-qtgreen-rgb: 161, 187, 47; /* a1bb2f */
   --bs-qtyellow-rgb: 239, 218, 40;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -670,6 +670,15 @@ progress {
     max-width: 1320px;
   }
 }
+
+.comic {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  border:solid 3px rgb(0, 0, 0);
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
