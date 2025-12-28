@@ -17,16 +17,18 @@
         <main class="flex-shrink-0">
 
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-white bg-qtred comic">
-                <div class="container px-5">
+            <nav class="navbar navbar-expand-lg bg-qtred comic my-3">
+                <img src="img/left.png" class="corner-img-qtgreen left" alt="" />
+                <img src="img/left.png" class="corner-img-qtyellow right mirror-vertical" alt="" />
+                <div class="container px-0">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link text-muted mx-2" href="index.html"><span style="background-color: white;">Home</span></a></li>
-                            <li class="nav-item"><a class="nav-link text-muted mx-2" href="aktuell.html"><span style="background-color: white;">Aktuell</span></a></li>
-                            <li class="nav-item"><a class="nav-link text-muted mx-2" href="angebot_beispielprojekte.html"><span style="background-color: white;">Angebot & Beispielprojekte</span></a></li>
-                            <li class="nav-item"><a class="nav-link text-muted mx-2" href="verein_kontakt.html"><span style="background-color: white;">Verein & Kontakt</span></a></li>
-                            <li class="nav-item"><a class="nav-link text-muted mx-2" href="newsletter.html"><span style="background-color: white;">Newsletter</span></a></li>
+                        <ul class="navbar-nav ms-auto mb-0 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html"><div class="comic bg-white">Home</div></a></li>
+                            <li class="nav-item"><a class="nav-link" href="aktuell.html"><div class="comic bg-white">Aktuell</div></a></li>
+                            <li class="nav-item"><a class="nav-link" href="angebot_beispielprojekte.html"><div class="comic bg-white">Angebot & Beispielprojekte</div></a></li>
+                            <li class="nav-item"><a class="nav-link" href="verein_kontakt.html"><div class="comic bg-white">Verein & Kontakt</div></a></li>
+                            <li class="nav-item"><a class="nav-link" href="newsletter.html"><div class="comic bg-white">Newsletter</div></a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,129 +38,118 @@
                 <div class="h1 fw-bolder">Aktuell</div>
             </div>
 
-            <!-- Page Content-->
-            <section class="py-5">
-                <div class="container px-0">
+            <section class="py-5 bg-qtgreen comic corner-gif" id="aktuell">
+                <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
+                <img src="img/left.png" class="corner-img-qtred right mirror-vertical" alt="" />
 
-                    <!-- QT an der Schwandelstrasse -->
-                    <div class="py-5 bg-qtgreen comic corner-gif">
-                        <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
-                        <img src="img/left.png" class="corner-img-qtred right mirror-vertical" alt="" />
-                        <div class="card-body p-0">
-                            <div class="row gx-0">
-                                <div class="col-lg-6 col-xl-5 py-lg-5">
-                                    <div class="p-4 p-md-5">
-                                        <div class="h2 fw-bolder">Quasitutto im Zentrum von Thalwil</div>
-                                        <img src="img/fb.png" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-7">
-                                    <div class="p-4 p-md-5">
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Sie finden uns jetzt auch in der neu eröffneten <a href="https://elliesyum.ch/">
-                                        <i class="bi bi-box-arrow-up-right"></i> Buchhandlung Elliesyum</a> mitten im Dorf
-                                        an der Schwandelstrasse 2. Defekte, tragbare Gegenstände können dort abgegeben und
-                                        (hoffentlich geflickt) wieder abgeholt werden.</span></p>
-                                        <ul class="mb-0 lead fw-normal">
-                                            <li><span style="background-color: white;"><b>Dienstag bis Freitag:</b> 9.00 bis 12.00 Uhr und 13.30 bis 18.00 Uhr</span></li>
-                                            <li><span style="background-color: white;"><b>Samstag:</b> 10.00 bis 15.00 Uhr</span></li>
-                                        </ul>
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Schwere Waren bitte weiterhin nach telefonischer Absprache in der Werkstatt direkt abgeben.
-                                        Die Werkstatt bleibt am Mittwochnachmittag 14-18 Uhr nach wie vor offen.</span></p>
-                                    </div>
-                                </div>
+                <div class="container px-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0 py-4">Quasitutto im Zentrum von Thalwil</h2>
+                            <div class="comic bg-white p-4"><img src="img/fb.png" /></div>
+                        </div>
+                        <div class="col-lg-6 col-xl-7">
+                            <div class="comic bg-white p-4">
+                                <p class="lead fw-normal">Sie finden uns jetzt auch in der neu eröffneten <a href="https://elliesyum.ch/">
+                                <i class="bi bi-box-arrow-up-right"></i> Buchhandlung Elliesyum</a> mitten im Dorf
+                                an der Schwandelstrasse 2. Defekte, tragbare Gegenstände können dort abgegeben und
+                                (hoffentlich geflickt) wieder abgeholt werden.</span></p>
+                                <ul class="lead fw-normal">
+                                    <li><b>Dienstag bis Freitag:</b> 9.00 bis 12.00 Uhr und 13.30 bis 18.00 Uhr</li>
+                                    <li><b>Samstag:</b> 10.00 bis 15.00 Uhr</li>
+                                </ul>
+                                <p class="lead fw-normal">Schwere Waren bitte weiterhin nach telefonischer Absprache in der Werkstatt direkt abgeben.
+                                Die Werkstatt bleibt am Mittwochnachmittag 14-18 Uhr nach wie vor offen.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Verstärkung -->
-                    <div class="py-5 bg-qtyellow comic corner-gif">
-                        <img src="img/left.png" class="corner-img-qtred left" alt="" />
-                        <img src="img/left.png" class="corner-img-qtgreen right mirror-vertical" alt="" />
-                        <div class="card-body p-0">
-                            <div class="row gx-0">
-                                <div class="col-lg-6 col-xl-5 py-lg-5">
-                                    <div class="p-4 p-md-5">
-                                        <div class="h2 fw-bolder">Unser Team braucht Verstärkung</div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-7">
-                                    <div class="p-4 p-md-5">
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Hast du Freude daran, mit deinen Fähigkeiten anderen zu helfen? Dann bist du bei Quasitutto richtig!
-                                        Wir suchen immer wieder vielseitig begabte Personen, die für unsere Kundschaft kleinere oder grössere
-                                        Arbeiten erledigen. Wir haben eine mit professionellen Werkzeugen und Maschinen ausgerüstete Werkstatt
-                                        mit unzähligen Klein- und Ersatzteilen, die dir für die Durchführung deiner Aufträge zur Verfügung steht.</span></p>
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Wenn dich solche Arbeiten reizen, zögere nicht mit uns <a href="verein_kontakt.html">Kontakt</a> aufzunehmen;
-                                        unser Team freut sich auf dich!</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Umzug -->
-                    <div class="py-5 bg-qtred comic corner-gif">
-                        <img src="img/left.png" class="corner-img-qtgreen left" alt="" />
-                        <img src="img/left.png" class="corner-img-qtyellow right mirror-vertical" alt="" />
-                        <div class="card-body p-0">
-                            <div class="row gx-0">
-                                <div class="col-lg-6 col-xl-5 py-lg-5">
-                                    <div class="p-4 p-md-5">
-                                        <div class="h2 fw-bolder">Wir begleiten Ihren Umzug</div>
-                                        <img src="img/mb.png" class="mirror-vertical"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-7">
-                                    <div class="p-4 p-md-5">
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Wir sind keine Umzugsfirma, dazu sind die Profis da; aber wir begleiten Sie fachmännisch dabei,
-                                            zum Beispiel beim</span></p>
-                                            <ul class="mb-0 lead fw-normal">
-                                                <li><span style="background-color: white;">Sortieren</span></li>
-                                                <li><span style="background-color: white;">Einpacken und Auspacken</span></li>
-                                                <li><span style="background-color: white;">Abmontieren und Montieren</span></li>
-                                                <li><span style="background-color: white;">Auseinandernehmen und Zusammenbauen</span></li>
-                                                <li><span style="background-color: white;">Deinstallieren und Installieren</span></li>
-                                                <li><span style="background-color: white;">Abhängen und Aufhängen</span></li>
-                                                <li><span style="background-color: white;">Reparieren</span></li>
-                                                <li><span style="background-color: white;">Ausbessern</span></li>
-                                                <li><span style="background-color: white;">usw.</span></li>
-                                            </ul>
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Sie werden erfreut sein, wie flott das geht!</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Unsere Werkstatt -->
-                    <div class="py-5 bg-qtgreen comic corner-gif">
-                        <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
-                        <img src="img/left.png" class="corner-img-qtred right mirror-vertical" alt="" />
-                        <div class="card-body p-0">
-                            <div class="row gx-0">
-                                <div class="col-lg-6 col-xl-5 py-lg-5">
-                                    <div class="p-4 p-md-5">
-                                        <div class="h2 fw-bolder">Unsere Werkstatt</div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-7">
-                                    <div class="p-4 p-md-5">
-                                        <ul class="mb-0 lead fw-normal">
-                                            <li><span style="background-color: white;">ist jeden Mittwoch (ausser während der Weihnachts- und der Sommerferien) von 14 bis 18 Uhr für jedefrau und jedermann geöffnet</span></li>
-                                            <li><span style="background-color: white;">liegt an der Dorfstrasse 65 beim Schützenhaus Thalwil</span></li>
-                                            <li><span style="background-color: white;">ist per ÖV bequem erreichbar (Bus-/Postautohaltestelle Schützenhaus, Linien 140 und 240)</span></li>
-                                        </ul>
-                                        <p class="mb-0 lead fw-normal"><span style="background-color: white;">Kleinere Reparaturgegenstände können Sie auch im <a href="https://elliesyum.ch/">
-                                        <i class="bi bi-box-arrow-up-right"></i> Buchladen Elliesyum</a> an der Schwandelstrasse abgeben und
-                                        wieder abholen. Während der Öffnungszeiten können Sie defekte Gegenstände vorbeibringen. Wir versuchen
-                                        dann, diese zu reparieren.</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </section>
+
+            <!-- Verstärkung -->
+            <section class="py-5 bg-qtyellow comic corner-gif" id="aktuell">
+                <img src="img/left.png" class="corner-img-qtred left" alt="" />
+                <img src="img/left.png" class="corner-img-qtgreen right mirror-vertical" alt="" />
+
+                <div class="container px-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0 py-4">Unser Team braucht Verstärkung</h2>
+                        </div>
+                        <div class="col-lg-6 col-xl-7">
+                            <div class="comic bg-white p-4">
+                                <p class="lead fw-normal">Hast du Freude daran, mit deinen Fähigkeiten anderen zu helfen? Dann bist du bei Quasitutto richtig!
+                                Wir suchen immer wieder vielseitig begabte Personen, die für unsere Kundschaft kleinere oder grössere
+                                Arbeiten erledigen. Wir haben eine mit professionellen Werkzeugen und Maschinen ausgerüstete Werkstatt
+                                mit unzähligen Klein- und Ersatzteilen, die dir für die Durchführung deiner Aufträge zur Verfügung steht.</span></p>
+                                <p class="lead fw-normal">Wenn dich solche Arbeiten reizen, zögere nicht mit uns <a href="verein_kontakt.html">Kontakt</a> aufzunehmen;
+                                unser Team freut sich auf dich!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Umzug -->
+            <section class="py-5 bg-qtred comic corner-gif" id="aktuell">
+                <img src="img/left.png" class="corner-img-qtgreen left" alt="" />
+                <img src="img/left.png" class="corner-img-qtyellow right mirror-vertical" alt="" />
+
+                <div class="container px-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0 py-4">Wir begleiten Ihren Umzug</h2>
+                            <div class="comic bg-white p-4"><img src="img/mb.png" class="mirror-vertical"/></div>
+                        </div>
+                        <div class="col-lg-6 col-xl-7">
+                            <div class="comic bg-white p-4">
+                                <p class="mb-0 lead fw-normal">Wir sind keine Umzugsfirma, dazu sind die Profis da; aber wir begleiten Sie fachmännisch dabei,
+                                    zum Beispiel beim</p>
+                                    <ul class="mb-0 lead fw-normal">
+                                        <li>Sortieren</li>
+                                        <li>Einpacken und Auspacken</li>
+                                        <li>Abmontieren und Montieren</li>
+                                        <li>Auseinandernehmen und Zusammenbauen</li>
+                                        <li>Deinstallieren und Installieren</li>
+                                        <li>Abhängen und Aufhängen</li>
+                                        <li>Reparieren</li>
+                                        <li>Ausbessern</li>
+                                        <li>usw.</li>
+                                    </ul>
+                                <p class="mb-0 lead fw-normal">Sie werden erfreut sein, wie flott das geht!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unsere Werkstatt -->
+            <section class="py-5 bg-qtgreen comic corner-gif" id="aktuell">
+                <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
+                <img src="img/left.png" class="corner-img-qtred right mirror-vertical" alt="" />
+
+                <div class="container px-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0 py-4">Unsere Werkstatt...</h2>
+                        </div>
+                        <div class="col-lg-6 col-xl-7">
+                            <div class="comic bg-white p-4">
+                                <ul class="mb-0 lead fw-normal">
+                                    <li>...ist jeden Mittwoch (ausser während der Weihnachts- und der Sommerferien) von 14 bis 18 Uhr für jedefrau und jedermann geöffnet</li>
+                                    <li>...liegt an der Dorfstrasse 65 beim Schützenhaus Thalwil</li>
+                                    <li>...ist per ÖV bequem erreichbar (Bus-/Postautohaltestelle Schützenhaus, Linien 140 und 240)</li>
+                                </ul>
+                                <p class="mb-0 lead fw-normal">Kleinere Reparaturgegenstände können Sie auch im <a href="https://elliesyum.ch/">
+                                <i class="bi bi-box-arrow-up-right"></i> Buchladen Elliesyum</a> an der Schwandelstrasse abgeben und
+                                wieder abholen. Während der Öffnungszeiten können Sie defekte Gegenstände vorbeibringen. Wir versuchen
+                                dann, diese zu reparieren.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
         <!-- Footer-->
