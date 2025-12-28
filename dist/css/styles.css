@@ -673,9 +673,10 @@ progress {
 
 .comic {
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-bottom: 1em;
+  padding-right: 0.5em;
   border:solid 3px rgb(0, 0, 0);
 }
 
