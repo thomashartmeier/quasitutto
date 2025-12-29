@@ -7874,8 +7874,6 @@ img.mirror-vertical {
 .py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
-  margin-right: 8rem !important;
-  margin-left: 8rem !important;
 }
 
 .pt-0 {
@@ -9115,8 +9113,8 @@ img.mirror-vertical {
     margin-left: 1.5rem !important;
   }
   .mx-md-5 {
-    margin-right: 3rem !important;
-    margin-left: 3rem !important;
+    margin-right: 10rem !important;
+    margin-left: 10rem !important;
   }
   .mx-md-auto {
     margin-right: auto !important;
