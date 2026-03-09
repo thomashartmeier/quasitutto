@@ -53,7 +53,7 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-qtred-rgb: 195, 34, 32;
   --bs-qtgreen-rgb: 161, 187, 47; /* a1bb2f */
-  --bs-qtyellow-rgb: 239, 218, 40;
+  --bs-qtyellow-rgb: 239, 218, 40; /* efda28 */
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -3835,8 +3835,8 @@ textarea.form-control-lg {
   font-size: var(--bs-navbar-toggler-font-size);
   line-height: 1;
   color: var(--bs-navbar-color);
-  background-color: white;
-  border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+  background-color: #efda28;
+  border: 3px solid black;
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
 }
