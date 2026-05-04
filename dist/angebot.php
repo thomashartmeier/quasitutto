@@ -1,42 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Quasitutto - Allerlei Service</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
+
+    <!-- Header -->
+    <?php include "./inc/head.html" ?>
+
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
 
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg bg-qtred comic my-3 px-5 py-1">
-                <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
-                <img src="img/left.png" class="corner-img-qtgreen right mirror-vertical" alt="" />
-                <div class="container px-0 py-2">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <a href="index.html">
-                        <img class="py-4 img-fluid" src="img/logo_sehrklein.png" alt="Quasitutto Logo" />
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-0 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html"><div class="comic bg-qtyellow p-2">Start</div></a></li>
-                            <li class="nav-item"><a class="nav-link" href="aktuell.html"><div class="comic bg-qtyellow p-2">Aktuell</div></a></li>
-                            <li class="nav-item"><a class="nav-link" href="angebot.html"><div class="comic bg-qtyellow p-2">Angebot/Preise</div></a></li>
-                            <li class="nav-item"><a class="nav-link" href="beispielprojekte.html"><div class="comic bg-qtyellow p-2">Zum Beispiel</div></a></li>
-                            <li class="nav-item"><a class="nav-link" href="verein_kontakt.html"><div class="comic bg-qtyellow p-2">Verein/Kontakt</div></a></li>
-                            <li class="nav-item"><a class="nav-link" href="newsletter.html"><div class="comic bg-qtyellow p-2">Newsletter/Links</div></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <!-- Navigation -->
+            <?php include "./inc/nav.html" ?>
 
             <div class="container px-0 py-5">
                 <div class="h1 fw-bolder">Angebot</div>
@@ -209,18 +181,8 @@
 
         </main>
 
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto comic">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Verein QUASITUTTO | Bahnhofstrasse 24 | CH-8800 Thalwil | Tel.: +41 77 403 03 06 | kontakt@quasitutto.ch</div></div>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer -->
+        <?php include "./inc/footer.html" ?>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
     </body>
 </html>
