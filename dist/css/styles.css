@@ -5407,6 +5407,8 @@ img.mirror-vertical {
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
   border-radius: var(--bs-modal-border-radius);
   outline: 0;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border:solid 3px rgb(0, 0, 0);
 }
 
 .modal-backdrop {

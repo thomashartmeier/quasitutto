@@ -173,7 +173,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 "><div class="comic bg-white text-center pb-4 pt-4"><img src="img/fb.png" alt="Quasitutto Logo f" /></div></div>
+                        <div class="col-xl-4 "><div class="comic bg-white text-center pb-4 pt-4"><img src="img/mb.png" alt="Quasitutto Logo f" /></div></div>
                     </div>
                     <p class="lead fw-normal"><span style="background-color: white;">Bei Arbeiten an Ihrem Domizil verrechnen wir die Fahrzeit von und zu unserer Werkstatt zu unserem Stundentarif.</span></p>
                 </div>
