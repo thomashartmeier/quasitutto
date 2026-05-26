@@ -338,7 +338,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                         </div>
                         <div class="col-xl-6">
                             <div class="comic bg-white p-4 lead fw-normal text-center">
-                                <iframe width="350" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=8.56128662824631,47.286871108534775,8.563700616359712,47.28838120360025&amp;layer=mapnik&amp;mlat=47.287626&amp;mlon=8.562494" style="border: 0"></iframe>
+                                <iframe width="100%" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=8.56128662824631,47.286871108534775,8.563700616359712,47.28838120360025&amp;layer=mapnik&amp;mlat=47.287626&amp;mlon=8.562494" style="border: 0"></iframe>
                                 <br/><a href="https://www.openstreetmap.org/?mlat=47.28756&amp;mlon=8.56248#map=16/47.29106/8.56375" target="_blank">Auf grosse Karte wechseln</a>
                             </div>
                         </div>
