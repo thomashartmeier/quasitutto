@@ -247,7 +247,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                 <div class="container px-1 px-md-5">
                     <div class="row gx-0 gx-md-5">
                         <div class="col-xl-6 mb-1">
-                            <h2 class="fw-bolder mb-4">Auftragsformular</h2>
+                            <h2 class="fw-bolder mb-4">Auftragsformular/Anfrageformular</h2>
                             <form id="formIdentifier" method="POST" action="./index.php">
                                 <table>
                                     <tr valign="top">
@@ -311,7 +311,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                             </form>
                         </div>
                         <div class="col-xl-6 mb-1">
-                            <p class="lead fw-normal px-4"><span style="background-color: white;">Verwenden Sie dieses Formular, um uns einen Auftrag zu übermitteln. Vielen Dank! <i class="bi bi-balloon-heart"></i></span></p>
+                            <p class="lead fw-normal px-4"><span style="background-color: white;">Verwenden Sie dieses Formular, um uns einen Auftrag oder eine Anfrage zu übermitteln. Vielen Dank! <i class="bi bi-balloon-heart"></i></span></p>
                             <div class="comic bg-white text-center pb-4 pt-4"><img src="img/mb.png" alt="Quasitutto Logo f" /></div>
                         </div>
                     </div>
