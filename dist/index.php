@@ -37,7 +37,7 @@ include("connection.php");
                 // check the math test
                 if ($math != 11)
                 {
-                    // issue modal to thank the client for the order
+                    // issue modal to point to the wrong answer
                     echo "<div class=\"modal\" tabindex=\"-1\" role=\"dialog\" id=\"wrongMath\">\n";
                     echo "  <div class=\"modal-dialog\" role=\"document\">\n";
                     echo "    <div class=\"modal-content bg-qtred comic\">\n";
