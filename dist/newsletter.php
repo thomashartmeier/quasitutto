@@ -29,6 +29,7 @@
                         <div class="col-xl-8">
                             <div class="comic bg-white p-4">
                                 <ul class="lead fw-normal">
+                                    <li><a href="newsletter/mai2026/newsletter.html">Newsletter, Mai 2026</a></li>
                                     <li><a href="newsletter/okt2025/newsletter.html">Newsletter, Oktober 2025</a></li>
                                     <li><a href="newsletter/mai2025/newsletter.html">Newsletter, Mai 2025</a></li>
                                     <li><a href="newsletter/okt2024/newsletter.html">Newsletter, Oktober 2024</a></li>
