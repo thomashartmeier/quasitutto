@@ -23,16 +23,16 @@ include("connection.php");
             if (!empty($submitted))
             {
                 // the form was submitted, so we check for valid form data first
-                $prename = $_POST['prename'];
-                $lastname = $_POST['lastname'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $street = $_POST['street'];
-                $zip = $_POST['zip'];
-                $city = $_POST['city'];
-                $address = $_POST['street'] . ", " . $_POST['zip'] . " " . $_POST['city'];
-                $notes = $_POST['notes'];
-                $math = $_POST['math'];
+                $prename  = filter_var(trim($_POST['prename']),  FILTER_SANITIZE_STRING);
+                $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
+                $email    = filter_var(trim($_POST['email']),    FILTER_SANITIZE_EMAIL);
+                $phone    = filter_var(trim($_POST['phone']),    FILTER_SANITIZE_STRING);
+                $street   = filter_var(trim($_POST['street']),   FILTER_SANITIZE_STRING);
+                $zip      = filter_var(trim($_POST['zip']),      FILTER_SANITIZE_STRING);
+                $city     = filter_var(trim($_POST['city']),     FILTER_SANITIZE_STRING);
+                $address  = $street . ", " . $zip . " " . $city;
+                $notes    = filter_var(trim($_POST['notes']),    FILTER_SANITIZE_STRING);
+                $math     = filter_var(trim($_POST['math']),     FILTER_SANITIZE_STRING);
 
                 // check the math test
                 if ($math != 11)
