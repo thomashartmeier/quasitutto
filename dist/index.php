@@ -2,6 +2,113 @@
 session_start();
 
 include("connection.php");
+
+// Initialize form values to avoid undefined variable notices on first load.
+$prename = '';
+$lastname = '';
+$email = '';
+$phone = '';
+$street = '';
+$zip = '';
+$city = '';
+$notes = '';
+
+function getClientIpAddress()
+{
+    $candidates = [
+        'HTTP_CF_CONNECTING_IP',
+        'HTTP_X_FORWARDED_FOR',
+        'REMOTE_ADDR'
+    ];
+
+    foreach ($candidates as $header)
+    {
+        if (empty($_SERVER[$header]))
+        {
+            continue;
+        }
+
+        $value = $_SERVER[$header];
+        $ip = trim(explode(',', $value)[0]);
+
+        if (filter_var($ip, FILTER_VALIDATE_IP))
+        {
+            return $ip;
+        }
+    }
+
+    return '';
+}
+
+function resolveCountryCodeFromIp($ip)
+{
+    // If behind Cloudflare, this is the cheapest and most reliable country hint.
+    if (!empty($_SERVER['HTTP_CF_IPCOUNTRY']))
+    {
+        $countryCode = strtoupper(trim($_SERVER['HTTP_CF_IPCOUNTRY']));
+        if (preg_match('/^[A-Z]{2}$/', $countryCode))
+        {
+            return $countryCode;
+        }
+    }
+
+    $context = stream_context_create([
+        'http' => [
+            'timeout' => 1.5,
+            'header' => "User-Agent: quasitutto-ip-check\r\n"
+        ]
+    ]);
+
+    $response = @file_get_contents("https://ipapi.co/{$ip}/country/", false, $context);
+    if ($response === false)
+    {
+        return null;
+    }
+
+    $countryCode = strtoupper(trim($response));
+    if (preg_match('/^[A-Z]{2}$/', $countryCode))
+    {
+        return $countryCode;
+    }
+
+    return null;
+}
+
+function isSwissVisitor($ip)
+{
+    if (empty($ip))
+    {
+        return false;
+    }
+
+    // Allow local/private addresses (useful for local testing and internal deployments).
+    if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE))
+    {
+        return true;
+    }
+
+    $cacheValidForSeconds = 3600;
+    $hasValidCache = !empty($_SESSION['countryCacheIp'])
+        && !empty($_SESSION['countryCacheCode'])
+        && !empty($_SESSION['countryCacheAt'])
+        && $_SESSION['countryCacheIp'] === $ip
+        && (time() - $_SESSION['countryCacheAt']) < $cacheValidForSeconds;
+
+    if ($hasValidCache)
+    {
+        return $_SESSION['countryCacheCode'] === 'CH';
+    }
+
+    $countryCode = resolveCountryCodeFromIp($ip);
+    $_SESSION['countryCacheIp'] = $ip;
+    $_SESSION['countryCacheCode'] = $countryCode;
+    $_SESSION['countryCacheAt'] = time();
+
+    return $countryCode === 'CH';
+}
+
+$clientIp = getClientIpAddress();
+$allowOrderForm = isSwissVisitor($clientIp);
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +125,9 @@ include("connection.php");
 
             <!-- Form handling -->
             <?php
-            $submitted = $_POST['submitted'];
+            $submitted = $_POST['submitted'] ?? '';
 
-            if (!empty($submitted))
+            if (!empty($submitted) && $allowOrderForm)
             {
                 // the form was submitted, so we check for valid form data first
                 $prename  = filter_var(trim($_POST['prename']),  FILTER_SANITIZE_STRING);
@@ -167,6 +274,12 @@ include("connection.php");
                     mail($to, $subject, $message, $headers);
                 }
             }
+            else if (!empty($submitted) && !$allowOrderForm)
+            {
+                echo "<div class=\"alert alert-warning mx-md-5 mt-3\" role=\"alert\">\n";
+                echo "  Das Auftragsformular ist nur aus der Schweiz erreichbar.\n";
+                echo "</div>\n";
+            }
             else
             {
                 // nothing to say if form was not submitted yet
@@ -248,6 +361,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                     <div class="row gx-0 gx-md-5">
                         <div class="col-xl-6 mb-1">
                             <h2 class="fw-bolder mb-4">Auftragsformular/Anfrageformular</h2>
+                            <?php if ($allowOrderForm) { ?>
                             <form id="formIdentifier" method="POST" action="./index.php">
                                 <table>
                                     <tr valign="top">
@@ -309,6 +423,13 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                                 <input type='hidden' value='1' name='submitted'>
                                 <p><input type="submit" value="Absenden"></p>
                             </form>
+                            <?php } else { ?>
+                            <div class="comic bg-white p-4">
+                                <p class="mb-0 lead fw-normal">
+                                    Das Auftragsformular kann aus technischen Gründen nur aus der Schweiz angezeigt werden.
+                                </p>
+                            </div>
+                            <?php } ?>
                         </div>
                         <div class="col-xl-6 mb-1">
                             <p class="lead fw-normal px-4"><span style="background-color: white;">Verwenden Sie dieses Formular, um uns einen Auftrag oder eine Anfrage zu übermitteln. Vielen Dank! <i class="bi bi-balloon-heart"></i></span></p>
