@@ -301,16 +301,16 @@ $allowOrderForm = isSwissVisitor($clientIp);
                             <p class="lead fw-normal mb-2 text-muted">Der andere Dienstleister, der ganz und gar und unkompliziert auf die Bedürfnisse und Wünsche seiner Kundschaft eingeht.</p>
                             <p class="lead fw-normal mb-2 text-muted">Unser Name ist Programm &mdash; wir machen QUASI ALLES.</p>
                         </div>
-                        <!-- <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <!-- <div>
                             <div class="my-1 text-center text-xl-start">
-                                <div class="banner bg-qtyellow rounded-3 text-center">
+                                <div class="py-4 bg-qtyellow banner comic corner-gif mx-md-5 text-center">
                                     <i class="bi bi-sun-fill"></i>
                                     <i class="bi bi-sun-fill"></i>
                                     <i class="bi bi-sun-fill"></i>
                                     <i class="bi bi-sun-fill"></i>
                                     <i class="bi bi-sun-fill"></i>
-                                    <p class="lead fw-normal text-muted mb-4">Unsere Werkstatt macht Sommerpause und bleibt während den Ferien geschlossen.
-Ab <strong>Mittwoch, 20. August 2025</strong> sind wir gerne jeweils am Mittwoch von 14 bis 18 Uhr wieder für Sie da.
+                                    <p class="lead fw-normal mb-4">Unsere Werkstatt macht vom 13. Juli bis 16. August <strong>Sommerpause</strong> und bleibt während den Ferien geschlossen.
+Ab <strong>Mittwoch, 19. August 2026</strong> sind wir gerne jeweils am Mittwoch von 14 bis 18 Uhr wieder für Sie da.
 Für Dienstleistungen bei Ihnen Zuhause sind wir auch während den Ferien erreichbar unter 077 403 03 06 oder <a href="mailto:kontakt@quasitutto.ch">kontakt@quasitutto.ch</a>
 Auch die Buchhandlung <strong>el LIESYUM</strong> an der Schwandelstrasse geht vom 21. Juli bis zum 3. August in die Sommerferien.<br/>
 Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
