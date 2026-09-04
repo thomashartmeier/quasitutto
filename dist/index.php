@@ -476,7 +476,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-5 mb-5 mb-lg-0">
                             <div class="text-center">
-                                <div class="mb-2 fst-italic">"Das Umrüsten von Halogenlampen auf LED ist ein abenteuerliches Unterfangen. Es hat wunderbar geklappt ! Quasitutto iat ein tolles Projekt. Herzlichen Dank für Eure wunderbare Initiative!"</div>
+                                <div class="mb-2 fst-italic">"Das Umrüsten von Halogenlampen auf LED ist ein abenteuerliches Unterfangen. Es hat wunderbar geklappt ! Quasitutto ist ein tolles Projekt. Herzlichen Dank für Eure wunderbare Initiative!"</div>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <img class="rounded-circle me-3" src="img/f.png" alt="..." />
                                     <div class="fw-bold">
