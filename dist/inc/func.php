@@ -122,7 +122,7 @@ function getGuestbookEntriesHtml($conn, $frontPageOnly)
 
         // compile html output
         $htmlOutput .= "<div class=\"text-center\">\n";
-        $htmlOutput .= "    <div class=\"mb-2 fst-italic\">" . nl2br(htmlspecialchars($row['feedback'])) . "</div>";
+        $htmlOutput .= "    <div class=\"mb-2 fst-italic\">\"" . nl2br(htmlspecialchars($row['feedback'])) . "\"</div>";
         $htmlOutput .= "    <div class=\"d-flex align-items-center justify-content-center\">\n";
         if ($row['female'])
         {
