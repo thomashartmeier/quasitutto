@@ -8,9 +8,6 @@ include("inc/func.php");
 $prename = '';
 $lastname = '';
 $email = '';
-$phone = '';
-$street = '';
-$zip = '';
 $city = '';
 $notes = '';
 
@@ -29,6 +26,137 @@ $allowForm = isSwissVisitor($clientIp);
 
             <!-- Navigation -->
             <?php include "./inc/nav.html" ?>
+
+            <!-- Form handling -->
+            <?php
+            $submitted = $_POST['submitted'] ?? '';
+
+            if (!empty($submitted) && $allowForm)
+            {
+                // the form was submitted, so we check for valid form data first
+                $prename  = filter_var(trim($_POST['prename']),  FILTER_SANITIZE_STRING);
+                $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
+                $email    = filter_var(trim($_POST['email']),    FILTER_SANITIZE_EMAIL);
+                $city     = filter_var(trim($_POST['city']),     FILTER_SANITIZE_STRING);
+                $feedback = filter_var(trim($_POST['feedback']), FILTER_SANITIZE_STRING);
+                $math     = filter_var(trim($_POST['math']),     FILTER_SANITIZE_STRING);
+
+                // check the math test
+                if ($math != 11)
+                {
+                    // issue modal to point to the wrong answer
+                    echo "<div class=\"modal\" tabindex=\"-1\" role=\"dialog\" id=\"wrongMath\">\n";
+                    echo "  <div class=\"modal-dialog\" role=\"document\">\n";
+                    echo "    <div class=\"modal-content bg-qtred comic\">\n";
+                    echo "      <div class=\"modal-header\">\n";
+                    echo "        <h5 class=\"modal-title\">Rechenfehler</h5>\n";
+                    echo "      </div>\n";
+                    echo "      <div class=\"modal-body\">\n";
+                    echo "        <p>Bitte 4 + 7 korrekt lösen.</p>\n";
+                    echo "      </div>\n";
+                    echo "      <div class=\"modal-footer\">\n";
+                    echo "        <button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">OK</button>\n";
+                    echo "      </div>\n";
+                    echo "    </div>\n";
+                    echo "  </div>\n";
+                    echo "</div>\n";
+                    echo "<script>\n";
+                    echo "document.addEventListener(\"DOMContentLoaded\", function() {\n";
+                    echo "  var el = document.getElementById(\"wrongMath\");\n";
+                    echo "  if (el) new bootstrap.Modal(el).show();\n";
+                    echo "});\n";
+                    echo "</script>";
+                }
+                else
+                {
+                    // all good, we have valid form data and can create a new database entry
+
+                    // create today's date
+                    $createDate = date("Y-m-d");
+
+                    // always created by the www-user with ID 1
+                    $createdByUserId = 1;
+
+                    // check if we already have a client with the same email address
+                    $sql = "SELECT * FROM clients WHERE email='$email'";
+
+                    $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
+
+                    // if we have a client with this email address, use it instead of creating a new one
+                    $clientId = null;
+
+                    if (mysqli_num_rows($query) > 0)
+                    {
+                        $client = mysqli_fetch_assoc($query);
+
+                        // get ID of the client (and do not update any fields)
+                        // TODO: we could check if we have some updated data from the client...
+                        $clientId = $client['id'];
+                    }
+                    // else we create a new client
+                    else
+                    {
+                        $sql = "INSERT INTO clients (createDate,    prename,    lastname,     email,    phone,  mobile,    address,    createdByUserId,  wantsNewsletters, notes) VALUES
+                                                    ('$createDate', '$prename', '$lastname', '$email', '', '', '$city', $createdByUserId, 1,                '')";
+
+                        $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
+
+                        // get ID of the newly created client
+                        $clientId = mysqli_insert_id($conn);
+                    }
+
+                    // insert new guestbook entry
+                    $sql = "INSERT INTO guestbookentries (createDate, createdByUserId, clientId, feedback, reviewedByUserId, active, frontpage, notes) VALUES
+                                               ('$createDate', $createdByUserId, $clientId, '$feedback', NULL, 0, 0, '')";
+
+                    $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
+
+                    // issue modal to thank the client for the guestbook entry
+                    echo "<div class=\"modal\" tabindex=\"-1\" role=\"dialog\" id=\"guestbookSuccessModal\">\n";
+                    echo "  <div class=\"modal-dialog\" role=\"document\">\n";
+                    echo "    <div class=\"modal-content bg-qtgreen comic\">\n";
+                    echo "      <div class=\"modal-header\">\n";
+                    echo "        <h5 class=\"modal-title\">Eintrag im Gästebuch aufgegeben</h5>\n";
+                    echo "      </div>\n";
+                    echo "      <div class=\"modal-body\">\n";
+                    echo "        <p>Vielen Dank für Ihren Eintrag im Gästebuch. Nach einer Überprüfung wird er auf der Webseite veröffentlicht.</p>\n";
+                    echo "      </div>\n";
+                    echo "      <div class=\"modal-footer\">\n";
+                    echo "        <button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">OK</button>\n";
+                    echo "      </div>\n";
+                    echo "    </div>\n";
+                    echo "  </div>\n";
+                    echo "</div>\n";
+                    echo "<script>\n";
+                    echo "document.addEventListener(\"DOMContentLoaded\", function() {\n";
+                    echo "  var el = document.getElementById(\"guestbookSuccessModal\");\n";
+                    echo "  if (el) new bootstrap.Modal(el).show();\n";
+                    echo "});\n";
+                    echo "</script>";
+
+                    // send out email to the QT people to let them know a new guestbook entry has been submitted
+                    $to = "kontakt@quasitutto.ch";
+
+                    $subject = "Neuer Gästebucheintrag bei Quasitutto";
+
+                    $message = "Liebe Quasituttis,\n\nsoeben ist ein neuer Gästebucheintrag eingegangen. Bitte loggt euch auf https://admin.quasitutto.ch ein, um ihn zu überprüfen und gegebenenfalls zu veröffentlichen.";
+
+                    $headers = "From: kontakt@quasitutto.ch";
+
+                    mail($to, $subject, $message, $headers);
+                }
+            }
+            else if (!empty($submitted) && !$allowForm)
+            {
+                echo "<div class=\"alert alert-warning mx-md-5 mt-3\" role=\"alert\">\n";
+                echo "  Kann nicht angezeigt werden.\n";
+                echo "</div>\n";
+            }
+            else
+            {
+                // nothing to say if form was not submitted yet
+            }
+            ?>
 
             <div class="container px-0 py-5">
                 <div class="h1 fw-bolder">Gästebuch</div>
