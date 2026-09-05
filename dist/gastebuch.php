@@ -169,7 +169,7 @@ $allowForm = isSwissVisitor($clientIp);
                 <div class="h1 fw-bolder">Gästebuch</div>
             </div>
 
-            <section class="py-4 bg-qtgreen comic corner-gif mx-md-5" id="aktuell">
+            <section class="py-4 bg-qtgreen comic corner-gif mx-md-5" id="guestbook">
                 <img src="img/left.png" class="corner-img-qtyellow left" alt="" />
                 <img src="img/left.png" class="corner-img-qtred right mirror-vertical" alt="" />
 
