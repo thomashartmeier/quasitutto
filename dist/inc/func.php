@@ -121,7 +121,7 @@ function getGuestbookEntriesHtml($conn, $frontPageOnly)
         }
 
         // compile html output
-        $htmlOutput .= "<div class=\"text-center\">\n";
+        $htmlOutput .= "<div class=\"col-12 col-md-6 text-center mb-5\">\n";
         $htmlOutput .= "    <div class=\"mb-2 fst-italic\">\"" . nl2br(htmlspecialchars($row['feedback'])) . "\"</div>";
         $htmlOutput .= "    <div class=\"d-flex align-items-center justify-content-center\">\n";
         if ($row['female'])
@@ -132,13 +132,13 @@ function getGuestbookEntriesHtml($conn, $frontPageOnly)
         {
             $htmlOutput .= "        <img class=\"rounded-circle me-3\" src=\"img/m.png\" alt=\"...\" />\n";
         }
-        $htmlOutput .= "    <div class=\"fw-bold\">\n";
-        $htmlOutput .= "        " . htmlspecialchars($row['prename']) . ", " . date("d. F Y", strtotime($row['createDate'])) . "\n";
-        $htmlOutput .= "        <span class=\"fw-bold text-primary mx-1\">/</span>\n";
-        $htmlOutput .= "        " . htmlspecialchars($row['city']) . "\n";
+        $htmlOutput .= "        <div class=\"fw-bold\">\n";
+        $htmlOutput .= "            " . htmlspecialchars($row['prename']) . ", " . date("d. F Y", strtotime($row['createDate'])) . "\n";
+        $htmlOutput .= "            <span class=\"fw-bold text-primary mx-1\">/</span>\n";
+        $htmlOutput .= "            " . htmlspecialchars($row['city']) . "\n";
+        $htmlOutput .= "        </div>\n";
         $htmlOutput .= "    </div>\n";
         $htmlOutput .= "</div>\n";
-        $htmlOutput .= "<p class=\"mb-5\"></p>\n";
     }
 
     return $htmlOutput;

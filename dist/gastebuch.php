@@ -241,10 +241,8 @@ $allowForm = isSwissVisitor($clientIp);
 
             <div class="py-4 bg-light">
                 <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-5 mb-5 mb-lg-0">
-                            <?php echo getGuestbookEntriesHtml($conn, false); ?>
-                        </div>
+                    <div class="row gx-5">
+                        <?php echo getGuestbookEntriesHtml($conn, false); ?>
                     </div>
                 </div>
             </div>
