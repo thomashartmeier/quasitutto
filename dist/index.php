@@ -186,7 +186,7 @@ $allowOrderForm = isSwissVisitor($clientIp);
             else if (!empty($submitted) && !$allowOrderForm)
             {
                 echo "<div class=\"alert alert-warning mx-md-5 mt-3\" role=\"alert\">\n";
-                echo "  Das Auftragsformular ist nur aus der Schweiz erreichbar.\n";
+                echo "  Kann nicht angezeigt werden.\n";
                 echo "</div>\n";
             }
             else
