@@ -335,7 +335,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                             <?php } else { ?>
                             <div class="comic bg-white p-4">
                                 <p class="mb-0 lead fw-normal">
-                                    Das Auftragsformular kann aus technischen Gründen nur aus der Schweiz angezeigt werden.
+                                    Kann nicht angezeigt werden.
                                 </p>
                             </div>
                             <?php } ?>
