@@ -144,6 +144,13 @@ $allowForm = isSwissVisitor($clientIp);
                     $headers = "From: kontakt@quasitutto.ch";
 
                     mail($to, $subject, $message, $headers);
+
+                    // reset form fields after submission
+                    $prename = '';
+                    $lastname = '';
+                    $email = '';
+                    $city = '';
+                    $feedback = '';
                 }
             }
             else if (!empty($submitted) && !$allowForm)
