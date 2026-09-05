@@ -480,7 +480,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <img class="rounded-circle me-3" src="img/f.png" alt="..." />
                                     <div class="fw-bold">
-                                        Silvia Staub, 23. November 2024
+                                        Silvia, 23. November 2024
                                         <span class="fw-bold text-primary mx-1">/</span>
                                         Thalwil
                                     </div>
@@ -498,6 +498,18 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                                     </div>
                                 </div>
                             </div>
+                            <p class="mb-5"></p>
+                            <div class="text-center">
+                                <div class="mb-2 fst-italic">"SUPER Service! Quasitutto war heute bei mir und hat meinen Fernseher schnell wieder zum Laufen gebracht. Sehr freundlich,kompetent und zuverlässig. Vielen Dank - klare Empfehlung!"</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="img/f.png" alt="..." />
+                                    <div class="fw-bold">
+                                        Gertrud, 5. September 2026
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        Thalwil
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="text-center">
@@ -505,7 +517,19 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <img class="rounded-circle me-3" src="img/m.png" alt="..." />
                                     <div class="fw-bold">
-                                        Dominik A., 31. Oktober 2024
+                                        Dominik, 31. Oktober 2024
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        Thalwil
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-5"></p>
+                            <div class="text-center">
+                                <div class="mb-2 fst-italic">"Meine grosse Terrasse hatte mal wieder eine Reinigung nötig. Meine Anfrage bei Quasitutto ging unkompliziert. Es meldete sich Herr Brandenberger bei mir. Er hat viel Erfahrung mit dem Kärcher und reinigte meine Terrasse gründlich. Ich bin sehr begeistert von Hern Brandenberger und auch von Quasitutto. Es ist so toll, dass es so etwas in unserer Gemeinde gibt."</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="img/f.png" alt="..." />
+                                    <div class="fw-bold">
+                                        Maria, 3. September 2026
                                         <span class="fw-bold text-primary mx-1">/</span>
                                         Thalwil
                                     </div>
