@@ -9,7 +9,7 @@ $prename = '';
 $lastname = '';
 $email = '';
 $city = '';
-$notes = '';
+$feedback = '';
 
 $clientIp = getClientIpAddress();
 $allowForm = isSwissVisitor($clientIp);
