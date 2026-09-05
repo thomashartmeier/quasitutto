@@ -94,4 +94,54 @@ function isSwissVisitor($ip)
     return $countryCode === 'CH';
 }
 
+function getGuestbookEntriesHtml($conn, $frontPageOnly)
+{
+    $htmlOutput = "";
+
+    $sql = "SELECT createDate, clientId, feedback, female FROM guestbookentries WHERE active = 1";
+    if ($frontPageOnly)
+    {
+        $sql .= " AND frontpage = 1";
+    }
+
+    $sql .= " ORDER BY createDate DESC";
+    $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
+    $entries = [];
+
+    while ($row = mysqli_fetch_assoc($query))
+    {
+        // look up prename and city in the clients table
+        $clientId = $row['clientId'];
+        $sqlClient = "SELECT prename, city FROM clients WHERE id = $clientId";
+        $queryClient = mysqli_query($conn, $sqlClient) or die("Could not run SQL query.");
+        if ($client = mysqli_fetch_assoc($queryClient))
+        {
+            $row['prename'] = $client['prename'];
+            $row['city'] = $client['city'];
+        }
+
+        // compile html output
+        $htmlOutput .= "<div class=\"text-center\">\n";
+        $htmlOutput .= "    <div class=\"mb-2 fst-italic\">" . nl2br(htmlspecialchars($row['feedback'])) . "</div>";
+        $htmlOutput .= "    <div class=\"d-flex align-items-center justify-content-center\">\n";
+        if ($row['female'])
+        {
+            $htmlOutput .= "        <img class=\"rounded-circle me-3\" src=\"img/f.png\" alt=\"...\" />\n";
+        }
+        else
+        {
+            $htmlOutput .= "        <img class=\"rounded-circle me-3\" src=\"img/m.png\" alt=\"...\" />\n";
+        }
+        $htmlOutput .= "    <div class=\"fw-bold\">\n";
+        $htmlOutput .= "        " . htmlspecialchars($row['prename']) . ", " . date("d. F Y", strtotime($row['createDate'])) . "\n";
+        $htmlOutput .= "        <span class=\"fw-bold text-primary mx-1\">/</span>\n";
+        $htmlOutput .= "        " . htmlspecialchars($row['city']) . "\n";
+        $htmlOutput .= "    </div>\n";
+        $htmlOutput .= "</div>\n";
+        $htmlOutput .= "<p class=\"mb-5\"></p>\n";
+    }
+
+    return $htmlOutput;
+}
+
 ?>

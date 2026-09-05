@@ -116,8 +116,8 @@ $allowOrderForm = isSwissVisitor($clientIp);
                             $home = $phone;
                         }
 
-                        $sql = "INSERT INTO clients (createDate,    prename,    lastname,     email,    phone,  mobile,    address,    createdByUserId,  wantsNewsletters, notes) VALUES
-                                                    ('$createDate', '$prename', '$lastname', '$email', '$home', '$mobile', '$address', $createdByUserId, 1,                '')";
+                        $sql = "INSERT INTO clients (createDate,    prename,    lastname,     email,    phone,  mobile,    address, city,   createdByUserId,  wantsNewsletters, notes) VALUES
+                                                    ('$createDate', '$prename', '$lastname', '$email', '$home', '$mobile', '$address', '$city', $createdByUserId, 1,                '')";
 
                         $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
 
@@ -382,66 +382,7 @@ Wir wünschen Ihnen erfrischende Sommertage, Ihr Quasitutto Team</p>
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-5 mb-5 mb-lg-0">
-                            <div class="text-center">
-                                <div class="mb-2 fst-italic">"Das Umrüsten von Halogenlampen auf LED ist ein abenteuerliches Unterfangen. Es hat wunderbar geklappt ! Quasitutto ist ein tolles Projekt. Herzlichen Dank für Eure wunderbare Initiative!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="img/f.png" alt="..." />
-                                    <div class="fw-bold">
-                                        Silvia, 23. November 2024
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Thalwil
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mb-5"></p>
-                            <div class="text-center">
-                                <div class="mb-2 fst-italic">"Cool gibt es Euch - Reparieren statt entsorgen ist heutzutage ein absolutes Muss."</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="img/m.png" alt="..." />
-                                    <div class="fw-bold">
-                                        Berni, 4. Oktober 2023
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Thalwil
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mb-5"></p>
-                            <div class="text-center">
-                                <div class="mb-2 fst-italic">"SUPER Service! Quasitutto war heute bei mir und hat meinen Fernseher schnell wieder zum Laufen gebracht. Sehr freundlich,kompetent und zuverlässig. Vielen Dank - klare Empfehlung!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="img/f.png" alt="..." />
-                                    <div class="fw-bold">
-                                        Gertrud, 5. September 2026
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Thalwil
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="text-center">
-                                <div class="mb-2 fst-italic">"Wir haben Quasitutto auf dem Willkommensanlass Thalwil kennenlernen dürfen. Als unsere neu installierte LED Lampe durch einen veralteten Dimmer nicht einwandfrei funktionierte, haben wir gleich an Quasitutto gedacht und haben eine Anfrage gestellt. Innerhalb kürzester Zeit haben wir einen Anruf von Herrn Liniger erhalten, der uns das Problem erklärt hat verschiedene Lösungswege aufgezeigt hat. Einige Tage später kam Herr Liniger und konnte unkompliziert unseren Dimmer umrüsten, sodass wir nun unsere Lampe problemlos nutzen können. Herzlichen Dank für Ihre Hilfe!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="img/m.png" alt="..." />
-                                    <div class="fw-bold">
-                                        Dominik, 31. Oktober 2024
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Thalwil
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mb-5"></p>
-                            <div class="text-center">
-                                <div class="mb-2 fst-italic">"Meine grosse Terrasse hatte mal wieder eine Reinigung nötig. Meine Anfrage bei Quasitutto ging unkompliziert. Es meldete sich Herr Brandenberger bei mir. Er hat viel Erfahrung mit dem Kärcher und reinigte meine Terrasse gründlich. Ich bin sehr begeistert von Hern Brandenberger und auch von Quasitutto. Es ist so toll, dass es so etwas in unserer Gemeinde gibt."</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="img/f.png" alt="..." />
-                                    <div class="fw-bold">
-                                        Maria, 3. September 2026
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        Thalwil
-                                    </div>
-                                </div>
-                            </div>
+                            <?php echo getGuestbookEntriesHtml($conn, true); ?>
                         </div>
                     </div>
                 </div>

@@ -96,7 +96,7 @@ $allowForm = isSwissVisitor($clientIp);
                     // else we create a new client
                     else
                     {
-                        $sql = "INSERT INTO clients (createDate,    prename,    lastname,     email,    phone,  mobile,    address,    createdByUserId,  wantsNewsletters, notes) VALUES
+                        $sql = "INSERT INTO clients (createDate,    prename,    lastname,     email,    phone,  mobile,    city,    createdByUserId,  wantsNewsletters, notes) VALUES
                                                     ('$createDate', '$prename', '$lastname', '$email', '', '', '$city', $createdByUserId, 1,                '')";
 
                         $query = mysqli_query($conn, $sql) or die("Could not run SQL query.");
