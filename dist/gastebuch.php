@@ -135,7 +135,7 @@ $allowForm = isSwissVisitor($clientIp);
                     echo "</script>";
 
                     // send out email to the QT people to let them know a new guestbook entry has been submitted
-                    $to = "kontakt@quasitutto.ch";
+                    $to = "kontakt@quasitutto.ch, webmaster@quasitutto.ch";
 
                     $subject = "Neuer Gästebucheintrag bei Quasitutto";
 
